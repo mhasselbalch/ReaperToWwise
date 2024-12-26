@@ -1,7 +1,7 @@
 -- @description ReaperToWwise 
--- @version 1.0
 -- @author Marc Hasselbalch
--- @website https://github.com/mhasselbalch/MH_ReaperToWwise
+-- @version 1.0
+-- @website https://github.com/mhasselbalch/ReaperToWwise
 -- @changelog
 --    Init
 
