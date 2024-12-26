@@ -2,6 +2,14 @@
 <index version="1.0" name="ReaperToWwise" commit="58a3e39ba95bd0f35846aa1f39aa4cb2574295e1">
   <category name="Script">
     <reapack name="ReaperToWwise_v1_42" type="script" desc="Test">
-      <metadata>
-  </metadata>
+      <description>
+        "Hello"
+    </description>
+      </metadata>
+      <version name="1.0" author="Marc Hasselbalch">
+        <source main="main">https://github.com/mhasselbalch/ReaperToWwise/blob/54dd20f65bfbe8a85d039c36d864925d46c9714f/Script/ReaperToWwise_v1_42.lua</source>
+      </version>
+    </reapack>
+  </category>
+  <metadata>
 </index>
