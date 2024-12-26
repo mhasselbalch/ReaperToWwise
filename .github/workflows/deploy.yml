@@ -26,3 +26,4 @@ jobs:
       run:  reapack-index --commit
     - name: Push changes
       run:  git push
+contents: write
