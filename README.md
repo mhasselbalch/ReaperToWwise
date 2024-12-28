@@ -46,7 +46,7 @@ Please read carefully.
 
 ## Pre-requisites:
 
-Reaper DAW
+#### Reaper DAW
 
 https://www.reaper.fm/
 
@@ -54,17 +54,17 @@ https://www.reaper.fm/
 
 While Reaper v7 introduced Lua 5.4 functionality, I haven't made use of any of it up until now.
 
-Wwise 2019.1+ (required for installing ReaWwise)
+#### Wwise 2019.1+ (required for installing ReaWwise)
 
 https://www.audiokinetic.com/en/products/wwise/
 
-ReaWwise (can be installed via ReaPack inside of Reaper)
+#### ReaWwise (can be installed via ReaPack inside of Reaper)
 
 https://blog.audiokinetic.com/en/reawwise-connecting-reaper-and-wwise/
 
 Exposes raw WAAPI functions to Lua inside of Reaper.
 
-RealmGui (can be installed via ReaPack inside of Reaper).
+#### RealmGui (can be installed via ReaPack inside of Reaper).
 
 Responsible for handling the GUI.
 
