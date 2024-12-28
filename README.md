@@ -103,11 +103,20 @@ Opens up a separate window with a few helpful notes on using the tool, including
 
 The commands are:
 
-Events					e 			/			eventName
-Triggers				t				/			triggerName
-Switches				sw			/			switchGroup		/			switchName
-States						st			/			stateGroup			/			stateName
-RTPCs					r				/			rtpcName			/			rtpcValue
+Events
+e/eventName
+
+Triggers	
+t/triggerName
+
+Switches	
+sw/switchGroup/switchName
+
+States			
+st/stateGroup/stateName
+
+RTPCs		
+r/rtpcName/rtpcValue
 
 ### ”Add RTPC lane”
 
