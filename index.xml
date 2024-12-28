@@ -6,7 +6,7 @@
         "Hello"
     </description>
       <version name="1.0" author="Marc Hasselbalch">
-        <source main="main">https://github.com/mhasselbalch/ReaperToWwise/blob/54dd20f65bfbe8a85d039c36d864925d46c9714f/Script/ReaperToWwise_v1_42.lua</source>
+        <source main="main">https://github.com/mhasselbalch/ReaperToWwise/blob/5432edc6c9a56c607b5e6320ff3e3d0ee2e8cdaf/MH_ReaperToWwise/ReaperToWwise_v1_42.lua</source>
       </version>
     </reapack>
   </category>
