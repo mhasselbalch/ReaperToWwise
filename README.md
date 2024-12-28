@@ -37,7 +37,9 @@ So not only does this tool enable you to better showcase your proficiency in Wwi
 
 You can download it from ReaPack within Reaper - or directly from the Github repository.
 
-[link]
+In Reaper, go to Extensions > ReaPack > Import repositories... > Paste in this URL: https://raw.githubusercontent.com/mhasselbalch/ReaperToWwise/master/index.xml
+
+Then go to ReaPack > Manage repositories > Find ReaperToWwise and double click > and then finally Install/Update ReaperToWwise.
 
 ## What is needed to make it work?
 
@@ -64,8 +66,6 @@ https://blog.audiokinetic.com/en/reawwise-connecting-reaper-and-wwise/
 
 #### RealmGui (can be installed via ReaPack inside of Reaper).
 
-Responsible for handling the GUI.
-
 ## More details:
 
 ReaperToWwise relies primarily on the Reaper extension called ReaWwise by Audiokinetic, which is described as an extension that *“streamlines the transfer of audio assets from your REAPER project into Wwise. The extension also allows you to create complex object hierarchies in Wwise without leaving the comfort of your REAPER project!”.*
@@ -76,7 +76,13 @@ A byproduct of ReaWwise is that it exposes raw WAAPI (Wwise Authoring API) funct
 
 ## Functionality:
 
-Text
+The tool works by parsing text commands written inside of the ‘Notes’ field of empty items.
+
+You add an empty item to the timeline, double click it and type in event or game sync call commands and it will be triggered when the Reaper playhead passes the item’s start position.
+
+You are also able to drive RTPCs with an automation envelope.
+
+See “The tool window” for all the available commands and RTPC information.
 
 ## The tool window:
 
@@ -179,26 +185,26 @@ Due to the way I’ve written the script, very rhythmically tight event calls (s
 
 This tool does in no way provide sample-accurate event calls as it is based on reading the time position of the Reaper playhead, and that float precision can be difficult to work with.
 
-I’ve experimented with increasing the float precision and span in which a certain level of							imprecision is allowed to still let an event trigger, but I found it be too unstable and would cause the occasional event to be dropped, which shouldn’t be an issue with the current 										configuration.
+I’ve experimented with increasing the float precision and span in which a certain level of imprecision is allowed to still let an event trigger, but I found it be too unstable and would cause the occasional event to be dropped, which shouldn’t be an issue with the current configuration.
+
+### Empty item delete upon playback will cause nil reference:
+		
+Please do not delete empty items when the transport has been started, as the script will cause a nil reference and crash
 
 ### Help window instances:
 
 As of now, it is possible to accidentally open up more than one “Help” window. Doing so might result in unexpected behaviour and eventually crash the script when you try to close one of the windows.
 
-### Empty item delete upon playback will cause nil reference:
 
-Please do not delete empty items when the transport has been started, as the script will cause 			a nil reference and crash.
-
-Thank you to everyone who provided feedback and tested the plugin.
-
-
-## Other
-
-Link for the ReaperToWwise Discord server:
-https://discord.gg/DYkfb9YAKB
-
+# Thank you
 
 Thank you to everyone who helped providing support, feedback and tested it.
 I couldn't have done it without you.
 
-Cheers.
+And thank you to [Christian Fillion](https://github.com/cfillion) for providing support and maintaining ReaPack.
+
+## Other
+
+Link for the [ReaperToWwise Discord server](https://discord.gg/DYkfb9YAKB)
+
+## Cheers
