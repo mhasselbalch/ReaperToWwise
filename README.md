@@ -25,9 +25,9 @@ ReaperToWwise will allow you to trigger events and set game syncs in a Wwise pro
 
 So not only does this tool enable you to better showcase your proficiency in Wwise, but there is also a few other obvious uses, which could be:
 
-1. being able to quickly prototype a setup - or entire systems - in, say, pre-production, before 				an 	engine is set up.
+1. being able to quickly prototype a setup - or entire systems - in, say, pre-production, before an 	engine is set up.
 
-2. showcase system functionality to other team members or departments before moving 							further into implementation
+2. showcase system functionality to other team members or departments before moving further into implementation
 
 3. spot cinematics or similar sequences
 
@@ -50,7 +50,7 @@ Please read carefully.
 
 https://www.reaper.fm/
 
-**Note: The tool should be compatible with most Reaper versions, where the Lua interpreter is 					based on Lua 5.3 (Reaper v.6.x and earlier according to their website).**
+**Note: The tool should be compatible with most Reaper versions, where the Lua interpreter is based on Lua 5.3 (Reaper v.6.x and earlier according to their website).**
 
 While Reaper v7 introduced Lua 5.4 functionality, I haven't made use of any of it up until now.
 
@@ -62,15 +62,13 @@ https://www.audiokinetic.com/en/products/wwise/
 
 https://blog.audiokinetic.com/en/reawwise-connecting-reaper-and-wwise/
 
-Exposes raw WAAPI functions to Lua inside of Reaper.
-
 #### RealmGui (can be installed via ReaPack inside of Reaper).
 
 Responsible for handling the GUI.
 
 ## More details:
 
-ReaperToWwise relies primarily on the Reaper extension called ReaWwise by Audiokinetic, which is described as *an extension that “streamlines the transfer of audio assets from your REAPER project into Wwise. The extension also allows you to create complex object hierarchies in Wwise without leaving the comfort of your REAPER project!”.*
+ReaperToWwise relies primarily on the Reaper extension called ReaWwise by Audiokinetic, which is described as an extension that *“streamlines the transfer of audio assets from your REAPER project into Wwise. The extension also allows you to create complex object hierarchies in Wwise without leaving the comfort of your REAPER project!”.*
 
 https://www.audiokinetic.com/en/blog/reawwise-connecting-reaper-and-wwise/
 
