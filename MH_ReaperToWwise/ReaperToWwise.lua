@@ -309,7 +309,7 @@ end
 
 function WaapiConnect(portNumber)
 
-  -- To fix: Can connect by default without changing status label string
+  -- To fix: Port can be sucessful without the status label string updating
   
   if type(portNumber) ~= "number" then
     reaper.ShowMessageBox(tostring("Port should be a number."), tostring("ReaperToWwise"), 0)
@@ -420,7 +420,7 @@ function EvalRTPC()
     
     local blockSize =  128 --128
     local sampleRate = 48000
-    local thisTrack = reaper.GetSelectedTrack(0,0) -- To fix: not always correct
+    local thisTrack = reaper.GetSelectedTrack(0,0) -- To fix
     local rtpcSendValue = 0
     local playPosition = reaper.GetPlayPositionEx(0)
     
@@ -430,9 +430,9 @@ function EvalRTPC()
   
        if playState == 1 and laneNil == false then
 
-            laneCount = LaneCount()
+            laneCount = LaneCount() 
             
-           for i=1, #laneNameArray do -- To fix: discrepancy between #laneNameArray and LaneCount()?
+           for i=1, #laneNameArray do -- To fix, possible count error between #laneNameArray and LaneCount()
 
               --for i=1, #laneNameArray do
                 inputNameArray[i] = laneNameArray[i]
@@ -605,7 +605,7 @@ function CountSelectedItems()
 trackCollect = {}
 selItemCount = 0
 
- -- To fix: Not always the best solution
+ -- To fix: Backup solution
  if thisTrack == nil then
   thisTrack = reaper.GetTrack(0,0)
  end
@@ -672,7 +672,7 @@ end
           if soloCheck ~= 0 or muteCheck ~= 1 then
           if string.sub(t[i], 1, 1) == "e" then   
               local  pe = t[i]:gsub('%,','')
-              local  pee = string.sub(pe, 3,40) -- To fix: Max string length, this could cause issues with long strings
+              local  pee = string.sub(pe, 3,40) -- To fix: Max string length, this could cause issues with longer strings
        WaapiPostEvent(pee)
        
       end
@@ -806,7 +806,7 @@ function GetItemStarts()
                 nextVal, nextIndex = GetClosestIndex(startsArray, playPos)
 
                 if nextIndex == nil then
-                  nextIndex = 0 -- To fix
+                  nextIndex = 0 -- To fix: backup solution
                 end
 
                 for i=1, selItemCount do
@@ -923,11 +923,11 @@ if laneNil == false then
     end
 
     if fxIndex == nil then
-      fxIndex = 0 
+      fxIndex = 0 -- To fix: backup solution
     end
 
       for i=1, LaneCount() do
-        trackEnv = reaper.GetFXEnvelope(rtpcTrack,fxIndex,0,false) 
+        trackEnv = reaper.GetFXEnvelope(rtpcTrack,fxIndex,0,false) -- To fix: backup solution
        if trackEnv then
             envArray[i] = trackEnv
             else
@@ -1020,12 +1020,12 @@ slider1:0<%m,%n,0.005>%s
     reaper.GetFXEnvelope(rtpcTrack, jsfxIndex, 0, true)
   end
 
-  -- To fix: Needs further testing
+  -- To fix: backup solution
   for i=1, LaneCount() do
     fxIndex = i
   end
   
-  -- To fix: Needs further testing
+ -- To fix: backup solution?
   if fxIndex == 0 or nil then
     for i=1, LaneCount() do
       fxIndex = i
