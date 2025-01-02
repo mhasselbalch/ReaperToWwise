@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaperToWwise" commit="6ebeedecf8fbd8b6412cdf1e5b49c498d75f7563">
+<index version="1" name="ReaperToWwise" commit="d6e3cf1a1d2aebd3e6eec4b4e0d0ea1fef748dd5">
   <category name="MH_ReaperToWwise">
     <reapack name="ReaperToWwise.lua" type="script" desc="ReaperToWwise">
       <metadata>
