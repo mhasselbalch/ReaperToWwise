@@ -3,7 +3,7 @@
 -- @author Marc Hasselbalch
 -- @website https://github.com/mhasselbalch/ReaperToWwise
 -- @changelog
---    Init
+--    First release
 
 versionNumber = "1.0"
 
