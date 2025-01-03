@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<index version="1" name="ReaperToWwise" commit="d6e3cf1a1d2aebd3e6eec4b4e0d0ea1fef748dd5">
+<index version="1" name="ReaperToWwise" commit="c8edb08c8be97d4028a64db327da936c0f08e6b2">
   <category name="MH_ReaperToWwise">
     <reapack name="ReaperToWwise.lua" type="script" desc="ReaperToWwise">
       <metadata>
@@ -8,6 +8,10 @@
       <version name="1.0" author="Marc Hasselbalch" time="2024-12-29T06:55:16Z">
         <changelog><![CDATA[Init]]></changelog>
         <source main="main">https://github.com/mhasselbalch/ReaperToWwise/raw/6ebeedecf8fbd8b6412cdf1e5b49c498d75f7563/MH_ReaperToWwise/ReaperToWwise.lua</source>
+      </version>
+      <version name="1.0.0" author="Marc Hasselbalch" time="2025-01-03T05:24:47Z">
+        <changelog><![CDATA[First release]]></changelog>
+        <source main="main">https://github.com/mhasselbalch/ReaperToWwise/raw/c8edb08c8be97d4028a64db327da936c0f08e6b2/MH_ReaperToWwise/ReaperToWwise.lua</source>
       </version>
     </reapack>
   </category>
