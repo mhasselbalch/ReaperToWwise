@@ -1,11 +1,11 @@
 -- @description ReaperToWwise 
--- @version 1.0
+-- @version 1.0.0
 -- @author Marc Hasselbalch
 -- @website https://github.com/mhasselbalch/ReaperToWwise
 -- @changelog
 --    First release
 
-versionNumber = "1.0"
+versionNumber = "1.0.0"
 
 -- Debug console message
 
