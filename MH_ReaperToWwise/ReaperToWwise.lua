@@ -1,11 +1,11 @@
 -- @description ReaperToWwise 
--- @version 1.0.0
+-- @version 1.0.1
 -- @author Marc Hasselbalch
 -- @website https://github.com/mhasselbalch/ReaperToWwise
 -- @changelog
---    First release
+--    Fixed RTPC evaluation bug
 
-versionNumber = "1.0.0"
+versionNumber = "1.0.1"
 
 -- Debug console message
 
@@ -426,18 +426,21 @@ function EvalRTPC()
     
     local laneCount = LaneCount() 
 
+    LaneCount() 
+
     envByNameArray = { }
   
        if playState == 1 and laneNil == false then
 
             laneCount = LaneCount() 
             
-           for i=1, #laneNameArray do -- To fix, possible count error between #laneNameArray and LaneCount()
+           for i=1, laneCount do -- To fix, possible count error between #laneNameArray and LaneCount()
 
-              --for i=1, #laneNameArray do
+              for i=1, laneCount do -- or #laneNameArray?
+
                 inputNameArray[i] = laneNameArray[i]
                 envNameArray[i] = tostring(inputNameArray[i]) .. " " .. "/" .. " " .. "ReaperToWwise_RTPC_Slider" --.jsfx"
-              --end
+              end
 
               envByNameArray[i] = reaper.GetTrackEnvelopeByName(rtpcTrack, envNameArray[i])
 
@@ -480,7 +483,7 @@ function EvalRTPC()
                     lastRtpcValue[i] = currentValue
                     
                     rtpcSendValue = currentValue
-    
+
             local rtpcName = laneNameArray[i]
             local rtpcValFrom = rtpcSendValue
             local rtpcCommand = "ak.soundengine.setRTPCValue"
@@ -833,7 +836,7 @@ end
 
 
 
--- Run
+-- Run on transport play
 function RunScript()
 
   SearchForRTPCName()
@@ -843,6 +846,7 @@ function RunScript()
   GetItemStarts()
    
   LaneCount()
+  CollectEnvs() -- here
   CollectEnvsInit()
   AutomationRTPC()
 
@@ -930,7 +934,7 @@ if laneNil == false then
         trackEnv = reaper.GetFXEnvelope(rtpcTrack,fxIndex,0,false) -- To fix: backup solution
        if trackEnv then
             envArray[i] = trackEnv
-            else
+            -- else?
           end   
     end
   end
@@ -947,16 +951,18 @@ function CollectEnvsInit()
   local thisEnv
   local trackEnv
   local pLaneName = {}
+  local laneCount
+
+  laneCount = LaneCount()
   
-  for i=1, LaneCount() do
+  for i=1, laneCount do
     thisEnv = reaper.GetFXEnvelope(rtpcTrack, i, 0, false)
-    retval, laneName = reaper.GetEnvelopeName(thisEnv)
+    retval, laneName = reaper.GetEnvelopeName(thisEnv) -- bug
   
    if laneName then
             local lanePrefix = laneName:match("([^/]+)/")
             lanePrefix = lanePrefix:gsub("^%s*(.-)%s*$", "%1")
             pLaneName[i] = lanePrefix
-      end
     end
 
     for i=1, tableSize(pLaneName) do
@@ -967,7 +973,7 @@ function CollectEnvsInit()
 
      CollectEnvs(pLaneName[i], rtpcTrack, i-1)
     end
-
+  end
 end
 
 -- Add JSFX slider plugin and auto-create lane for it
@@ -1022,7 +1028,7 @@ slider1:0<%m,%n,0.005>%s
 
   -- To fix: backup solution
   for i=1, LaneCount() do
-    fxIndex = i
+      fxIndex = i
   end
   
  -- To fix: backup solution?
